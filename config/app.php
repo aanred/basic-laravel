@@ -167,7 +167,7 @@ return [
          * Package Service Providers...
          */
 
-        //
+        Barryvdh\Debugbar\ServiceProvider::class,
 
         /*
          * Application Service Providers...
@@ -178,6 +178,8 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
 
+        // Custom Service Providers...
+        App\Providers\SampleServiceProvider::class,
     ],
 
     /*
@@ -226,6 +228,11 @@ return [
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
 
+        // Packages
+        'Debugbar' => Barryvdh\Debugbar\Facade::class,
+
+        // Custom...
+        'Sample' => App\Facades\Sample::class,
     ],
 
 ];

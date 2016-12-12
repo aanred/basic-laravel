@@ -1,0 +1,1 @@
+@extends('sample.layouts.app')
