@@ -27,7 +27,7 @@ class SampleManager
 
     public function routes() {
     	$this->app->router->group(['prefix' => 'sample', 'namespace' => 'Sample'], function() {
-    		$this->app->router->get('dashboard', 'DashboardController@index');
+    		$this->app->router->get('dashboard/{num?}', 'DashboardController@index');
     	});
     }
 }

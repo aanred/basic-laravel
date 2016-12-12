@@ -121,3 +121,15 @@ if ( !function_exists('form_switch') ) :
 		return $switcher;
 	}
 endif;
+
+if ( ! function_exists('menu_active') ) :
+	function menu_active($uri = '') {
+		$active = '';
+
+		if (Request::is(Request::segment(1) . '/' . $uri . '/*') || Request::is(Request::segment(1) . '/' . $uri) || Request::is($uri)) {
+			$active = 'active';
+		}
+
+		return $active;
+	}
+endif;

@@ -7,7 +7,9 @@ use App\Http\Controllers\Controller;
 
 class DashboardController extends Controller
 {
-    public function index() {
-    	return view('sample.dashboard');
+    public function index($num = 1) {
+    	return view('sample.dashboard-' . $num, [
+    		'title' => 'Dashboard v' . $num
+    		]);
     }
 }

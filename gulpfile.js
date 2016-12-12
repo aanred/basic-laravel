@@ -18,6 +18,7 @@ var paths = {
 	jquery: './bower_components/jquery/dist/',
 	bootstrap: './bower_components/bootstrap-sass/',
 	fontawesome: './bower_components/font-awesome/',
+	ionicons: './bower_components/Ionicons/',
 };
 
 elixir((mix) => {
@@ -40,7 +41,8 @@ elixir((mix) => {
 	// Sass
 	mix.sass('app.scss')
 		.copy(paths.bootstrap + 'assets/fonts/**', 'public/build/fonts')
-		.copy(paths.fontawesome + 'fonts/**', 'public/build/fonts');
+		.copy(paths.fontawesome + 'fonts/**', 'public/build/fonts')
+		.copy(paths.ionicons + 'fonts/**', 'public/build/fonts');
 
 	// Scripts
 	mix.scripts([
