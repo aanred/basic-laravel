@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>{{ isset($title) ? $title : 'Untitled' }} &bull; {{ config('app.name', 'Laravel') }}</title>
+  <title>{{  $title or 'Untitled' }} &bull; {{ config('app.name', 'Laravel') }}</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <!-- Styles -->
@@ -14,7 +14,7 @@
         page. However, you can choose any other skin. Make sure you
         apply the skin class to the body tag so the changes take effect.
   -->
-  <link rel="stylesheet" href="{{ elixir('css/skins/skin-blue.css') }}">
+  <link rel="stylesheet" href="{{ elixir('css/skins/_all-skins.css') }}">
 
   @stack('styles')
 
@@ -47,13 +47,14 @@ desired effect
 |               | sidebar-mini                            |
 |---------------------------------------------------------|
 -->
-<body class="hold-transition skin-blue sidebar-mini">
+<body class="hold-transition skin-blue @yield('layout', 'sidebar-mini')">
 <div id="app" class="wrapper">
 
   <!-- Main Header -->
   <header class="main-header">
+    @section('main-header')
     <!-- Logo -->
-    <a href="index2.html" class="logo">
+    <a href="{{ url('sample/dashboard') }}" class="logo">
       <!-- mini logo for sidebar mini 50x50 pixels -->
       <span class="logo-mini"><b>{{ config('app.name', 'Laravel') }}</b></span>
       <!-- logo for regular state and mobile devices -->
@@ -311,3 +312,4 @@ desired effect
       </div>
     </nav>
   </header>
+  @show

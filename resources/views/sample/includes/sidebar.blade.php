@@ -1,3 +1,4 @@
+@section('main-sidebar')
   <!-- Left side column. contains the logo and sidebar -->
   <aside class="main-sidebar">
     <!-- sidebar: style can be found in sidebar.less -->
@@ -26,7 +27,7 @@
       <!-- sidebar menu: : style can be found in sidebar.less -->
       <ul class="sidebar-menu">
         <li class="header">MAIN NAVIGATION</li>
-        <li class="active treeview">
+        <li class="{{ menu_active('dashboard') }} treeview">
           <a href="#">
             <i class="fa fa-dashboard"></i> <span>Dashboard</span>
             <span class="pull-right-container">
@@ -34,11 +35,11 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li class="{{ menu_active('sample/dashboard') }}"><a href="{{ url('sample/dashboard') }}"><i class="fa fa-circle-o"></i> Dashboard v1</a></li>
-            <li class="{{ menu_active('sample/dashboard/2') }}"><a href="{{ url('sample/dashboard/2') }}"><i class="fa fa-circle-o"></i> Dashboard v2</a></li>
+            <li class="{{ menu_active('dashboard') }}"><a href="{{ url('sample/dashboard') }}"><i class="fa fa-circle-o"></i> Dashboard v1</a></li>
+            <li class="{{ menu_active('dashboard/2') }}"><a href="{{ url('sample/dashboard/2') }}"><i class="fa fa-circle-o"></i> Dashboard v2</a></li>
           </ul>
         </li>
-        <li class="treeview">
+        <li class="{{ menu_active('layouts') }} treeview">
           <a href="#">
             <i class="fa fa-files-o"></i>
             <span>Layout Options</span>
@@ -47,21 +48,21 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="pages/layout/top-nav.html"><i class="fa fa-circle-o"></i> Top Navigation</a></li>
-            <li><a href="pages/layout/boxed.html"><i class="fa fa-circle-o"></i> Boxed</a></li>
-            <li><a href="pages/layout/fixed.html"><i class="fa fa-circle-o"></i> Fixed</a></li>
-            <li><a href="pages/layout/collapsed-sidebar.html"><i class="fa fa-circle-o"></i> Collapsed Sidebar</a></li>
+            <li class="{{ menu_active('layouts/top-nav') }}"><a href="{{ url('sample/layouts/top-nav') }}"><i class="fa fa-circle-o"></i> Top Navigation</a></li>
+            <li class="{{ menu_active('layouts/boxed') }}"><a href="{{ url('sample/layouts/boxed') }}"><i class="fa fa-circle-o"></i> Boxed</a></li>
+            <li class="{{ menu_active('layouts/fixed') }}"><a href="{{ url('sample/layouts/fixed') }}"><i class="fa fa-circle-o"></i> Fixed</a></li>
+            <li class="{{ menu_active('layouts/collapsed-sidebar') }}"><a href="{{ url('sample/layouts/collapsed-sidebar') }}"><i class="fa fa-circle-o"></i> Collapsed Sidebar</a></li>
           </ul>
         </li>
-        <li>
-          <a href="pages/widgets.html">
+        <li class="{{ menu_active('widgets') }}">
+          <a href="{{ url('sample/widgets') }}">
             <i class="fa fa-th"></i> <span>Widgets</span>
             <span class="pull-right-container">
               <small class="label pull-right bg-green">new</small>
             </span>
           </a>
         </li>
-        <li class="treeview">
+        <li class="{{ menu_active('charts') }} treeview">
           <a href="#">
             <i class="fa fa-pie-chart"></i>
             <span>Charts</span>
@@ -70,13 +71,13 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="pages/charts/chartjs.html"><i class="fa fa-circle-o"></i> ChartJS</a></li>
-            <li><a href="pages/charts/morris.html"><i class="fa fa-circle-o"></i> Morris</a></li>
-            <li><a href="pages/charts/flot.html"><i class="fa fa-circle-o"></i> Flot</a></li>
-            <li><a href="pages/charts/inline.html"><i class="fa fa-circle-o"></i> Inline charts</a></li>
+            <li class="{{ menu_active('charts/chartjs') }}"><a href="{{ url('sample/charts/chartjs') }}"><i class="fa fa-circle-o"></i> ChartJS</a></li>
+            <li class="{{ menu_active('charts/morris') }}"><a href="{{ url('sample/charts/morris') }}"><i class="fa fa-circle-o"></i> Morris</a></li>
+            <li class="{{ menu_active('charts/flot') }}"><a href="{{ url('sample/charts/flot') }}"><i class="fa fa-circle-o"></i> Flot</a></li>
+            <li class="{{ menu_active('charts/inline-chart') }}"><a href="{{ url('sample/charts/inline-chart') }}"><i class="fa fa-circle-o"></i> Inline charts</a></li>
           </ul>
         </li>
-        <li class="treeview">
+        <li class="{{ menu_active('ui') }} treeview">
           <a href="#">
             <i class="fa fa-laptop"></i>
             <span>UI Elements</span>
@@ -85,15 +86,15 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="pages/UI/general.html"><i class="fa fa-circle-o"></i> General</a></li>
-            <li><a href="pages/UI/icons.html"><i class="fa fa-circle-o"></i> Icons</a></li>
-            <li><a href="pages/UI/buttons.html"><i class="fa fa-circle-o"></i> Buttons</a></li>
-            <li><a href="pages/UI/sliders.html"><i class="fa fa-circle-o"></i> Sliders</a></li>
-            <li><a href="pages/UI/timeline.html"><i class="fa fa-circle-o"></i> Timeline</a></li>
-            <li><a href="pages/UI/modals.html"><i class="fa fa-circle-o"></i> Modals</a></li>
+            <li class="{{ menu_active('ui/general') }}"><a href="{{ url('sample/ui/general') }}"><i class="fa fa-circle-o"></i> General</a></li>
+            <li class="{{ menu_active('ui/icons') }}"><a href="{{ url('sample/ui/icons') }}"><i class="fa fa-circle-o"></i> Icons</a></li>
+            <li class="{{ menu_active('ui/buttons') }}"><a href="{{ url('sample/ui/buttons') }}"><i class="fa fa-circle-o"></i> Buttons</a></li>
+            <li class="{{ menu_active('ui/sliders') }}"><a href="{{ url('sample/ui/sliders') }}"><i class="fa fa-circle-o"></i> Sliders</a></li>
+            <li class="{{ menu_active('ui/timeline') }}"><a href="{{ url('sample/ui/timeline') }}"><i class="fa fa-circle-o"></i> Timeline</a></li>
+            <li class="{{ menu_active('ui/modals') }}"><a href="{{ url('sample/ui/modals') }}"><i class="fa fa-circle-o"></i> Modals</a></li>
           </ul>
         </li>
-        <li class="treeview">
+        <li class="{{ menu_active('forms') }} treeview">
           <a href="#">
             <i class="fa fa-edit"></i> <span>Forms</span>
             <span class="pull-right-container">
@@ -101,9 +102,9 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="pages/forms/general.html"><i class="fa fa-circle-o"></i> General Elements</a></li>
-            <li><a href="pages/forms/advanced.html"><i class="fa fa-circle-o"></i> Advanced Elements</a></li>
-            <li><a href="pages/forms/editors.html"><i class="fa fa-circle-o"></i> Editors</a></li>
+            <li class="{{ menu_active('forms/general') }}"><a href="{{ url('sample/forms/general') }}"><i class="fa fa-circle-o"></i> General Elements</a></li>
+            <li class="{{ menu_active('forms/advanced') }}"><a href="{{ url('sample/forms/advanced') }}"><i class="fa fa-circle-o"></i> Advanced Elements</a></li>
+            <li class="{{ menu_active('forms/editors') }}"><a href="{{ url('sample/forms/editors') }}"><i class="fa fa-circle-o"></i> Editors</a></li>
           </ul>
         </li>
         <li class="treeview">
@@ -198,3 +199,4 @@
     </section>
     <!-- /.sidebar -->
   </aside>
+@show
